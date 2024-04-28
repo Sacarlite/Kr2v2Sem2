@@ -1,6 +1,6 @@
 #include "FileOutput.h"//Подключение HeaderFile с выводом данных в фаил
-#include <fstream>//Библеотека ввода и вывода из фаила
-#include <iostream>//Библеотека ввода и вывода
+#include <fstream>//Библиотека ввода и вывода из фаила
+#include <iostream>//Библиотека ввода и вывода
 #include "Checks.h"//Подключение HeaderFile с обработкой ошибок пользовательского ввода
 #include "MainMenu.h"//Подключение HeaderFile с Enum menu
 #include "PersonalInterface.h"//Подключение HeaderFile с пользовательским интерфейсом

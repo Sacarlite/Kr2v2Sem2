@@ -1,8 +1,6 @@
-﻿#include "Herbivores.h"
-
-#include <iostream>
-
-#include "Mammals.h"
+﻿#include "Herbivores.h"//Подключение HeaderFile с классом Herbivores
+#include <iostream>//Библиотека ввода и вывода
+#include "Mammals.h"//Подключение HeaderFile с классом Mammals
 Herbivores::Herbivores(std::string methodOfNutrition, double weight, std::string livingEnvironment,
 	std::string name, bool poisonous, int averageLifeExpectancy):Mammals{ methodOfNutrition ,weight,livingEnvironment,name}, _poisonous{poisonous}, _averageLifeExpectancy{ averageLifeExpectancy }
 {
@@ -40,47 +38,28 @@ void Herbivores::SetMethodOfNutrition(std::string methodOfNutrition)
 {
 	_methodOfNutrition = methodOfNutrition;
 }
-std::string Herbivores::GetMethodOfNutrition()
-{
-	return _methodOfNutrition;
-}
+
 void Herbivores::SetWeight(double weight)
 {
 	_weight = weight;
 }
-double Herbivores::GetWeight()
-{
-	return _weight;
-}
+
 void Herbivores::SetLivingEnvironment(std::string livingEnvironment)
 {
 	_livingEnvironment = livingEnvironment;
 }
-std::string Herbivores::GetLivingEnvironment()
-{
-	return _livingEnvironment;
-}
+
 void Herbivores::SetName(std::string name)
 {
 	_name = name;
 }
-std::string Herbivores::GetName()
-{
-	return _name;
-}
+
 void Herbivores::SetPoisonous(bool poisonous)
 {
 	_poisonous = poisonous;
 }
-bool Herbivores::GetPoisonous()
-{
-	return _poisonous;
-}
+
 void Herbivores::SetAverageLifeExpectancy(int averageLifeExpectancy)
 {
 	_averageLifeExpectancy = averageLifeExpectancy;
-}
-int Herbivores::GetAverageLifeExpectancy()
-{
-	return _averageLifeExpectancy;
 }

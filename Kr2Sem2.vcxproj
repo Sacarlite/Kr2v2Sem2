@@ -131,6 +131,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Algoritm.cpp" />
     <ClCompile Include="Checks.cpp" />
     <ClCompile Include="ConsoleOutput.cpp" />
     <ClCompile Include="FileInput.cpp" />
@@ -142,6 +143,7 @@
     <ClCompile Include="PersonalIntface.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Algoritm.h" />
     <ClInclude Include="CheckExeption.h" />
     <ClInclude Include="Checks.h" />
     <ClInclude Include="ConsoleOutput.h" />

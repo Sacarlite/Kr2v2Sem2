@@ -1,6 +1,6 @@
 ﻿#pragma once
-#include <string>//Подключение библеотеки строк
-#include<fstream>//Подключение библеотеки файлового ввода
+#include <string>//Подключение библиотеки строк
+#include<fstream>//Подключение библиотеки файлового ввода
 
 double GetPositiveDoubleMoreThen0();//Функция ввода с консоли значения с плавающей точкой
 int GetPositiveIntMoreThen0();//Функция ввода с консоли целого положительного значения
@@ -11,3 +11,4 @@ double CheckLineD(std::ifstream& file);//Функция ввода из фаил
 int GetChoise();//Функция ввода пользовательского ввода
 bool GetTrueOrFalse();//Функция ввода логической переменной
 bool CheckLineB(std::ifstream& file);//Функция ввода логической переменной
+int GetMenuPoint();//Функция ввода выбора пункта менюы

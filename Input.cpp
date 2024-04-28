@@ -1,18 +1,17 @@
 ﻿#include "Input.h"//Подключение HeaderFile с вводом данных с консоли
-#include <iostream>//Библеотека ввода и вывода
+#include <iostream>//Библиотека ввода и вывода
 #include "Checks.h"//Подключение HeaderFile с проверками пользовательского ввода
 #include "MainMenu.h"//Подключение HeaderFile с Enum menu
-#include "Herbivores.h"//Подключение HeaderFile с Enum menu
+#include "Herbivores.h"//Подключение HeaderFile с  классом Herbivores
 
 std::vector<Herbivores> ConsoleIput()
 {
 	std::vector<Herbivores> herbivores;//Объявления вектора объектов Herbivores
 	std::cout << "Добавление млекопитающих" << std::endl;
-	int counter = 1;//Объявление счётчика 
 	int userChoice = 0;//Объявление переменной пользовательского ввода
 	while(true)
 	{
-		std::cout << "Животное №" << counter<< std::endl;
+		std::cout << "Животное:" << std::endl;
 		std::cout << "Введите название:" << std::endl;
 		std::string name = GetString();//Ввод переменной имени
 		std::cout << "Введите способ питания:" << std::endl;
@@ -35,7 +34,6 @@ std::vector<Herbivores> ConsoleIput()
 		userChoice = GetChoise();//Ввод пользовательского решения
 		if(userChoice== Yes)
 		{
-			counter++;
 			continue;
 		}
 		else

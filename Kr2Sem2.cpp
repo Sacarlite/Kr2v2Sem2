@@ -9,6 +9,7 @@
 #include "FileInput.h"//Подключение HeaderFile с файловым вводом
 #include "FileOutput.h"//Подключение HeaderFile с файловым выводом
 #include "Input.h"//Подключение HeaderFile с вводом с консоли
+#include "Algoritm.h"//Подключение HeaderFile с вводом с консоли
 #include "PersonalInterface.h"//Подключение HeaderFile пользовательского интерфейса
 #define QUIT 27//Макрос присваивания Esc значение 27
 
@@ -18,7 +19,7 @@ int main()
 	SetConsoleCP(1251); //функции для настройки локализации в строковых переменных при вводе
 	SetConsoleOutputCP(1251); //функции для настройки локализации в строковых переменных при выводе
 	int userChoice = 0; //Переменная пользовательского ввода
-	std::vector<Herbivores> herbivores; //Вектор вводных апартаментов
+	std::vector<Herbivores> herbivores; //Вектор вводных животных
 	ShowGreetings(); //Вывод приветствия
 	ShowTask(); //Вывод задания
 	do
@@ -35,14 +36,45 @@ int main()
 			ConsoleOutput(herbivores); //Вывод считанных данных на консоль
 			break;
 		}
+		std::cout << std::endl;
 		ConsoleOutput(herbivores); //Вывод итогового массива на консоль
-		ShowOutputType(); //Вывод сообщения об сохранении выбранных данных в файл
-		userChoice = GetChoise(); // Ввод пользовательского решения
-		if (userChoice == Yes)
+		std::cout << std::endl;
+		while (true)
 		{
-			FileOutput(herbivores); //Сохранение итогового массива в фаил
+			if (herbivores.empty())//Проверка что вектор не пуст
+			{
+				std::cout << "Ваш список животных пуст." << std::endl;
+				std::cout << std::endl;
+				break;
+			}
+			ShowMenu();//Вывод меню редактирования
+			userChoice = GetMenuPoint();//Пользовательский ввод пунктов меню
+			std::cout << std::endl;
+			switch (userChoice) //switch выбора пунктов меню редактирования
+			{
+			case Add:
+				AddHerbivore(herbivores);//Добавление новых животных
+				break;
+			case Remove:
+				RemoveHerbivore(herbivores);//Удаление животных из списка
+				break;
+			case Change:
+				ChangeHerbivore(herbivores);//Изменение данных о животных
+				break;
+			default:
+				break;//Выход из меню
+			}
 		}
-		herbivores.clear(); //Чистка вектора квартир
+		if (!herbivores.empty())//Проверка что вектор не пуст
+		{
+			ShowOutputType(); //Вывод сообщения об сохранении выбранных данных в файл
+			userChoice = GetChoise(); // Ввод пользовательского решения
+			if (userChoice == Yes)
+			{
+				FileOutput(herbivores); //Сохранение итогового массива в фаил
+			}
+		}
+		herbivores.clear(); //Чистка вектора животных
 		std::cout << "Нажмите Esc чтобы завершить работу программы." << std::endl;
 		std::cout << "Нажмите Enter чтобы продолжить." << std::endl;
 		userChoice = _getch(); //Ввод кода символа введённого с клавиатуры
